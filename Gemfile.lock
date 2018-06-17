@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    one_drive (0.0.1)
+    one_drive (0.0.2)
 
 GEM
   remote: https://rubygems.org/
