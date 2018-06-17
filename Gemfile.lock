@@ -71,16 +71,7 @@ GEM
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rake (12.3.1)
-    rspec (3.7.0)
-      rspec-core (~> 3.7.0)
-      rspec-expectations (~> 3.7.0)
-      rspec-mocks (~> 3.7.0)
-    rspec-core (3.7.1)
-      rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.7.0)
-    rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
@@ -109,7 +100,6 @@ DEPENDENCIES
   minitest
   one_drive!
   rake
-  rspec
   test-unit
   test-unit-capybara
 

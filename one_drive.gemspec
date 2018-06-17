@@ -39,5 +39,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "aruba"
   spec.add_development_dependency "test-unit"
   spec.add_development_dependency "test-unit-capybara"
-  spec.add_development_dependency 'rspec'
 end
