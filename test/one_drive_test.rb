@@ -1,6 +1,7 @@
 require "test_helper"
 
 class OneDriveTest < ActiveSupport::TestCase
+  include Test::Unit::Assertions
   setup do
     @one_drive = OneDrive::V1.new('000000004422588C','http://app.dimomohit.com/drive/one-drive')
   end
