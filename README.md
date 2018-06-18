@@ -24,25 +24,31 @@ Or install it yourself as:
 ## Usage
 
 1. Initialize
-@one_drive = OneDrive::V1.new(client_id, redirect_uri, scope)
+
+    ` @one_drive = OneDrive::V1.new(client_id, redirect_uri, scope) `
 
 2. Generate code url to get refresh_token
-@one_drive.code_url
+
+    ` @one_drive.code_url `
 
 Or Directly generate token url
-@one_drive.token_url
+
+    ` @one_drive.token_url `
 
 Visit the url to generate the token
 
 3. Set your token which you get on visiting the above url
-@one_drive.set_token token
+
+    ` @one_drive.set_token token `
 Note: only token is required you can leave expires_in and token_type as blank for expires_in=3600 and token_type='bearer'
 
 4. List out all your drives
-@drives = @one_drive.get_drives
+
+    ` @drives = @one_drive.get_drives `
 
 After calling the last function you can fetch last drive list which you fetched by calling
-@one_drive.drives
+
+    ` @one_drive.drives `
 
 
 ## Development
