@@ -192,7 +192,7 @@ module OneDrive
       if options.include? :format
         url = url + "?format=#{options[:format]}"
       end
-      @item = (HTTParty.get(url,headers: set_headers).body)
+      @current_item = @item = (HTTParty.get(url,headers: set_headers).body)
     end
     def get_list options={}
       url = "https://graph.microsoft.com/v1.0"

@@ -25,39 +25,91 @@ Or install it yourself as:
 
 1. Initialize
 
-    ` @one_drive = OneDrive::V1.new(client_id, redirect_uri, scope) `
+    ` one_drive = OneDrive::V1.new(client_id, redirect_uri, scope) `
 
 2. Generate code url to get refresh_token
 
-    ` @one_drive.code_url `
+    ` one_drive.code_url `
 
-Or Directly generate token url
+    Or Directly generate token url
 
-    ` @one_drive.token_url `
+    ` one_drive.token_url `
 
-Visit the url to generate the token
+    Visit the url to generate the token
 
 3. Set your token which you get on visiting the above url
 
-    ` @one_drive.set_token token `
-Note: only token is required you can leave expires_in and token_type as blank for expires_in=3600 and token_type='bearer'
+    ` one_drive.set_token token `
+
+    Note: only token is required you can leave expires_in and token_type as blank for expires_in=3600 and token_type='bearer'
 
 4. List out all your drives
 
-    ` @drives = @one_drive.get_drives `
+    ` drives = @one_drive.get_drives `
 
-After calling the last function you can fetch last drive list which you fetched by calling
+    ` drives = @one_drive.get_drives('users',id) `
 
-    ` @one_drive.drives `
+    ` drives = @one_drive.get_drives('sites',id) `
+
+    ` drives = @one_drive.get_drives('groups',id) `
+
+    After calling the last function you can fetch last drive list which you fetched by calling
+
+    ` one_drive.drives `
 5. Search
 
+    ` one_drive.search(options)`
+
+    Here options is hash with `:search_text` as required key (this is used as search text)
+    Optional keys are
+    `:drive_id`
+    `:group_id`
+    `:site_id`
+    `:user_id`
+
+    Example: Say I want to search file name 'dummy' in a drive (123) then we need to pass options as
+    ` one_drive.search({search_text: 'dummy',drive_id: '123'}) `
+
 6. Download Item
+    ` one_drive.download(options)`
+    Here options is hash with `:item_id` or `:item_path` is required key (this is used as search item)
+    Optional keys are
+    `:drive_id`
+    `:group_id`
+    `:site_id`
+    `:user_id`
 
 7. Recent Drive
+    ` one_drive.recent `
 
 8. Special Folder
+    ` one_drive.get_special_folder_by_name('Photos') `
 
 9. My Drive
+    ` one_drive.my_drive `
+
+10. Items Shared with me
+    ` one_drive.items_shared_with_me `
+
+11. Get Item
+    ` one_drive.get_item options `
+    Here options is hash with `:item_id` or `:item_path` is required key (this is used as search item)
+    Optional keys are
+    `:drive_id`
+    `:group_id`
+    `:site_id`
+    `:user_id`
+
+Other Functions are
+
+    `one_drive.get_children_of_special_folder(name)`
+
+    `one_drive.get_children_of_special_folder()`
+
+Once you have visited the functions the result is stored in attributes
+    `:client_id,:scope,:redirect_uri,:code,:token,:drives,:items,:current_drive,
+    :current_item,:expires_in,:token_type,:my_drive,:recent_drive,:special_drive,:special_items,
+    :item`
 
 
 ## Development
