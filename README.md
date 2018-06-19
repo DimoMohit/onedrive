@@ -49,6 +49,15 @@ Note: only token is required you can leave expires_in and token_type as blank fo
 After calling the last function you can fetch last drive list which you fetched by calling
 
     ` @one_drive.drives `
+5. Search
+
+6. Download Item
+
+7. Recent Drive
+
+8. Special Folder
+
+9. My Drive
 
 
 ## Development
